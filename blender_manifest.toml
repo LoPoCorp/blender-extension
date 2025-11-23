@@ -6,7 +6,7 @@ name = "LoPoCorp Model"
 tagline = "Auto add LoPoCorp custom props when selecting objects"
 maintainer = "LoPoCorp"
 type = "add-on"
-website = "https://github.com/LoPoCorp/blender-addon"
+website = "https://github.com/LoPoCorp/blender-extension"
 blender_version_min = "5.0.0"
 license = [
   "SPDX:MIT",
