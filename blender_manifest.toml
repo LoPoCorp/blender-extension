@@ -1,0 +1,13 @@
+schema_version = "1.0.0"
+
+id = "lopocorp_model"
+version = "0.1.0"
+name = "LoPoCorp Model"
+tagline = "Auto add LoPoCorp custom props when selecting objects"
+maintainer = "LoPoCorp"
+type = "add-on"
+website = "https://github.com/LoPoCorp/blender-addon"
+blender_version_min = "5.0.0"
+license = [
+  "SPDX:MIT",
+]
