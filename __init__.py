@@ -10,6 +10,9 @@ def ensure_props(obj):
         if "visibility_sim_var" not in obj:
             obj["visibility_sim_var"] = ""
 
+        if "sound_spawner" not in obj:
+            obj["sound_spawner"] = ""
+
     if obj.type == "LIGHT":
         light = obj.data
 
