@@ -1,4 +1,5 @@
 import bpy
+from bpy.app.handlers import persistent
 
 
 # --- Add props if don't exists ---
@@ -51,6 +52,7 @@ def ensure_props(obj):
 
 
 # --- Update props on selection change ---
+@persistent
 def selection_handler(scene):
     obj = bpy.context.object
     if obj:
@@ -58,14 +60,14 @@ def selection_handler(scene):
 
 
 def register():
-    bpy.app.handlers.depsgraph_update_post.append(selection_handler)
+    # Prevent duplicate handlers
+    if selection_handler not in bpy.app.handlers.depsgraph_update_post:
+        bpy.app.handlers.depsgraph_update_post.append(selection_handler)
 
 
 def unregister():
-    # Remove handler
-    for h in bpy.app.handlers.depsgraph_update_post:
-        if h == selection_handler:
-            bpy.app.handlers.depsgraph_update_post.remove(h)
+    if selection_handler in bpy.app.handlers.depsgraph_update_post:
+        bpy.app.handlers.depsgraph_update_post.remove(selection_handler)
 
 
 if __name__ == "__main__":
