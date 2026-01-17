@@ -15,7 +15,7 @@ def ensure_props(obj):
             obj["sound_spawner"] = ""
 
         if "door" not in obj:
-            obj["door"] = ""
+            obj["door"] = -1
 
     if obj.type == "LIGHT":
         light = obj.data
